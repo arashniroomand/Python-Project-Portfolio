@@ -2,8 +2,7 @@ import webbrowser
 import os
 from fpdf import FPDF
 
-
-from info import IMAGE_PATH
+from info import IMAGE_PATH, FILES_DIR
 
 
 class PdfReport:
@@ -39,8 +38,8 @@ class PdfReport:
         pdf.cell(w = 100, h = 20, txt = str(flatmate2.name), border = 0)
         pdf.cell(w = 200, h = 20, txt = flatmate2_pay, border = 0, ln =1)
         
-        
-        os.chdir("C:/Users/arash/OneDrive/Desktop/Code/Github_Repositories/Project_python/Python-Project-Portfolio/Flatmates/files")
+
+        os.chdir(str(FILES_DIR))
         pdf.output(self.filename)
         webbrowser.open(self.filename)
         
